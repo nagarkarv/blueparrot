@@ -6,6 +6,15 @@
 </head>
 <body>
     <h2>A simple blue parrot web app</h2>
-    <p>This is hypotical app developed to demonstrate a complete CI/CD pipeline</p>
+    <p>This is Test hypotical app developed to demonstrate a complete CI/CD pipeline</p>
+
+   <a href='http://localhost:5002/GetList'><input type = "button" value = "Show List" /></p>  
+    <table border = 1>
+            {% for parrot in parrotList %}
+                <tr>
+                <th> {{ parrot }} </th>
+                </tr>
+            {% endfor %}
+    </table>
 </body>
 </html>
