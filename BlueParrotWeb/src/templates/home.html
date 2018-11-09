@@ -7,14 +7,19 @@
 <body>
     <h2>A simple blue parrot web app</h2>
     <p>This is Test hypotical app developed to demonstrate a complete CI/CD pipeline</p>
-
-   <a href='http://localhost:5002/GetList'><input type = "button" value = "Show List" /></p>  
-    <table border = 1>
-            {% for parrot in parrotList %}
-                <tr>
-                <th> {{ parrot }} </th>
-                </tr>
-            {% endfor %}
-    </table>
+    <!--<a href='http://localhost:5002/GetList'> -->
+    <form action="" method="GET" name="GetList">
+        <input type = "submit" value = "Refresh List" />
+                <table style="width:100%" border="2">
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                    {% for parrot in parrotList %}
+                    <tr> 
+                        <td>{{ parrot['name'] }}</td> 
+                    </tr>
+                    {% endfor %}
+                </table>
+    </form>
 </body>
 </html>

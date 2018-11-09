@@ -3,24 +3,24 @@ from flask import (
 	render_template,
 	request
 	)
+import requests
 
 # Create the application instance
 print('Creating webapp instance')
 app = Flask(__name__, template_folder="templates")
 
-@app.route('/GetList')
 def GetList():
 	print('get list')
-	#response = request.post(, data=data)
-	parrotList = [
-		{	"Item": "data1" },
-		{	"Item": "data2" }
-	]
-	return render_template('home.html', parrotList = parrotList) 	
+	response = requests.get('http://localhost:5000/blueparrot')
+	responseData = response.json()['blue']
+	return responseData
 
 # Create a URL route in our application for "/"
 @app.route('/', methods=['GET', 'POST'])
 def home():
+	print("Home")
+	if request.method == 'GET':
+		return render_template('home.html', parrotList = GetList())	
 	return render_template('home.html', parrotList = [])
 
 @app.route('/contactus')
