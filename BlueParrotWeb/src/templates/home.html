@@ -15,7 +15,7 @@
                     </tr>
                     {% for parrot in parrotList %}
                     <tr> 
-                        <td><a href='http://localhost:5002/showDetails'>{{ parrot['name'] }}</a></td>
+                        <td><a href='/showDetails?name={{parrot['name']}}' >{{ parrot['name'] }}</a>
                     </tr>
                     {% endfor %}
                 </table>
