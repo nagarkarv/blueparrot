@@ -9,6 +9,14 @@ import requests
 print('Creating webapp instance')
 app = Flask(__name__, template_folder="templates")
 
+@app.route('/showDetails', methods=['GET', 'POST'])
+def showDetails():
+	#print('Showing details  for ', request.GET)
+	print("Type of Request is ", type(request))
+	parrotName = request.args.get('name', 'None')
+	print("Parrot Name request = ", parrotName)
+	return render_template('showdetails.html', parrotName = parrotName)
+
 def GetList():
 	print('get list')
 	response = requests.get('http://localhost:5000/blueparrot')
