@@ -1,0 +1,1 @@
+docker build -t blueparrot_web:v1.0.0 .
