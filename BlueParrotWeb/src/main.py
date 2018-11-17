@@ -15,14 +15,14 @@ def showDetails():
 	print("Type of Request is ", type(request))
 	parrotName = request.args.get('name', 'None')
 	print("Parrot Name request = ", parrotName)
-	response = requests.get('http://localhost:5001/parrotdetails/name/' + parrotName )
+	response = requests.get('http://parrot_details_api_dev:5001/parrotdetails/name/' + parrotName )
 	parrotData =  response.json()['info']
 	print("Data received = ", parrotData)
 	return render_template('showdetails.html', parrotDetails = parrotData)
 
 def GetList():
 	print('get list')
-	response = requests.get('http://localhost:5000/blueparrot')
+	response = requests.get('http://parrot_api_dev:5000/blueparrot')
 	responseData = response.json()['blue']
 	return responseData
 
