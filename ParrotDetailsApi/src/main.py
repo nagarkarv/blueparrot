@@ -48,4 +48,4 @@ api.add_resource(ParrotDetails, '/parrotdetails/name/<string:parrotName>')
 api.add_resource(ParrotDetailsList, '/parrotdetails')
 
 if __name__ == '__main__':
-    app.run(port=5001, debug=True)
+    app.run(port=5001, debug=True,host='0.0.0.0')
