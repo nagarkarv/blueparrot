@@ -1,0 +1,1 @@
+docker build -t parrot_details_api:v1.0.0 .
