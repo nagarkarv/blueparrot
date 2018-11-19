@@ -1,8 +1,17 @@
 version: '3.2'
+
 services: 
-  jemkins-master:
-    build: .\docker-jenkins\jmaster
-    networks:
-      - parrot-net
+  jenkins-master:
+    build: docker-jenkins/jmaster
+    ports:
+      - '8080:8080'
     volumes:
       - "$HOME/jenkins_home:/var/jenkins_home"
+    container_name: jenkins-master
+    networks:
+      - custom-network
+
+networks:
+  custom-network:
+    external:
+      name: parrot-net

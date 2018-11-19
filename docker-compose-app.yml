@@ -1,19 +1,19 @@
 version: '3.2'
 services: 
   parrotapi:
-    build: .\ParerotApi
+    build: ParerotApi
     ports:
       - '5000:5000'
     networks:
       - parrot-net
   parrotdetailsapi:
-    build: .\ParrotDetailsApi
+    build: ParrotDetailsApi
     ports:
       - '5001:5001'
     networks:
       - parrot-net
   parrotweb:
-    build: .\BlueParroWeb
+    build: BlueParroWeb
     ports:
       - '5002:5002'
     networks:
