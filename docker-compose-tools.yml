@@ -1,0 +1,8 @@
+version: '3.2'
+services: 
+  jemkins-master:
+    build: .\docker-jenkins\jmaster
+    networks:
+      - parrot-net
+    volumes:
+      - "$HOME/jenkins_home:/var/jenkins_home"
