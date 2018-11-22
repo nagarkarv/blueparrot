@@ -1,0 +1,24 @@
+version: '3.2'
+services:
+  parrot_api_dev:
+    build: ParrotApi
+    ports:
+      - '5000:5000'
+    networks:
+      - custom-network
+  parrot_details_api_dev:
+    build: ParrotDetailsApi
+    ports:
+      - '5001:5001'
+    networks:
+      - custom-network
+  blueparrot_web_dev:
+    build: BlueParrotWeb
+    ports:
+      - '5002:5002'
+    networks:
+      - custom-network
+networks:
+  custom-network:
+    external:
+      name: parrot-net
