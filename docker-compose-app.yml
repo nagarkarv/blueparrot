@@ -1,15 +1,12 @@
 version: '3.2'
 services:
   parrot_api_dev:
-services: 
-  parrotapi:
     build: ParrotApi
     ports:
       - '5000:5000'
     networks:
       - custom-network
   parrot_details_api_dev:
-  parrotdetailsapi:
     build: ParrotDetailsApi
     ports:
       - '5001:5001'
@@ -17,8 +14,6 @@ services:
       - custom-network
   blueparrot_web_dev:
     build: BlueParrotWeb
-  parrotweb:
-    build: BlueParroWeb
     ports:
       - '5002:5002'
     networks:
